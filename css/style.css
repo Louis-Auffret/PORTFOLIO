@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+*::before::after {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.bloc p {
+    writing-mode: vertical-rl;
+    text-orientation: sideways-right;
+    color: #000;
+    font-family: "Anton", sans-serif;
+    letter-spacing: 10px;
+    font-weight: bold;
+    font-size: 3.85vw;
+    text-transform: uppercase;
+    transform: rotate(180deg);
+    z-index: 100;
+    display: flex;
+    margin: 20px 0 0 20px;
+    transition: 300ms;
+    float: right;
+}
+.steps {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+.mouse {
+    cursor: pointer;
+}
+.bloc {
+    background: linear-gradient(90deg, rgba(23, 29, 28, 1) 30%, rgba(88, 99, 248, 1) 80%, rgba(211, 211, 211, 1) 100%);
+    width: 12.5%;
+    color: #000;
+    border-radius: 0 0 120px 120px / 0 0 42px 42px;
+    transition: 300ms;
+    z-index: 100;
+    position: absolute;
+}
+
+/*------------------------------------ BLOCS -----------------------------------*/
+#bloc1 {
+    height: 525px;
+    left: 0%;
+}
+#bloc1:hover {
+    height: 700px;
+}
+#bloc1:hover p {
+    color: #fff;
+    letter-spacing: 15px;
+}
+/*-----------------*/
+#bloc2 {
+    height: 425px;
+    left: 12.5%;
+}
+#bloc2:hover {
+    height: 555px;
+}
+#bloc2:hover p {
+    color: #fff;
+    letter-spacing: 15px;
+}
+/*-----------------*/
+#bloc3 {
+    background: linear-gradient(90deg, rgba(23, 29, 28, 1) 20%, rgba(88, 99, 248, 1) 60%, rgb(211, 211, 211) 100%);
+    height: 470px;
+    left: 25%;
+}
+#bloc3:hover {
+    height: 585px;
+}
+#bloc3:hover p {
+    color: #fff;
+    letter-spacing: 15px;
+}
+/*-----------------*/
+#bloc4 {
+    background: linear-gradient(90deg, rgba(23, 29, 28, 1) 10%, rgba(88, 99, 248, 1) 60%, rgba(211, 211, 211, 1) 100%);
+    height: 560px;
+    left: 37.5%;
+}
+#bloc4:hover {
+    height: 685px;
+}
+#bloc4:hover p {
+    color: #fff;
+    letter-spacing: 15px;
+}
+/*-----------------*/
+#bloc5 {
+    background: linear-gradient(90deg, rgba(23, 29, 28, 1) 5%, rgba(88, 99, 248, 1) 55%, rgba(211, 211, 211, 1) 100%);
+    height: 650px;
+    left: 50%;
+}
+#bloc5:hover {
+    height: 800px;
+}
+#bloc5:hover p {
+    color: #fff;
+    letter-spacing: 15px;
+}
+/*-----------------*/
+#bloc6 {
+    background: linear-gradient(90deg, rgba(23, 29, 28, 1) 0%, rgba(88, 99, 248, 1) 45%, rgba(211, 211, 211, 1) 90%);
+    height: 700px;
+    left: 62.5%;
+}
+#bloc6:hover {
+    height: 780px;
+}
+#bloc6:hover p {
+    color: #fff;
+    letter-spacing: 15px;
+}
+/*-----------------*/
+#bloc7 {
+    background: linear-gradient(90deg, rgba(23, 29, 28, 1) 0%, rgba(88, 99, 248, 1) 35%, rgba(211, 211, 211, 1) 80%);
+    height: 240px;
+    left: 75%;
+}
+#bloc7:hover {
+    height: 325px;
+}
+#bloc7:hover p {
+    color: #fff;
+    letter-spacing: 15px;
+}
+/*-----------------*/
+#bloc8 {
+    background: linear-gradient(90deg, rgba(23, 29, 28, 1) 0%, rgba(88, 99, 248, 1) 30%, rgb(211, 211, 211) 70%);
+    height: 450px;
+    left: 87.5%;
+}
+#bloc8 p {
+    color: #5863f8;
+}
+#bloc8:hover {
+    height: 600px;
+}
+#bloc8:hover p {
+    color: blue;
+    letter-spacing: 15px;
+}
+
+/*-------------------------------------------------------------------------------*/
+
+header {
+    height: 60vh;
+}
+
+footer {
+    width: 100%;
+    z-index: 99;
+    background-color: white;
+    /* position: fixed; */
+    bottom: -20px;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: row;
+}
+
+#name {
+    font-size: 200px;
+    /* z-index: -100; */
+    transition: 0.75s;
+    margin: 0;
+    font-weight: 600;
+}
+.info-line {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#infos {
+    align-self: flex-end;
+    padding: 40px 60px;
+}
+#infos a {
+    text-decoration: none;
+}
+a {
+    color: blue;
+    text-decoration: none;
+}
+a:visited {
+    color: blue;
+}
+.info {
+    color: blue;
+    transition: 0.75s;
+    font-weight: 600;
+}
+
+#content {
+    padding: 60px;
+    /* min-height: 90vh; */
+    display: flex;
+    flex-direction: column;
+    /* position: absolute;
+    bottom: -100px; */
+}
+#content h2 {
+    color: blue;
+    font-size: 200px;
+    margin: 0;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+}
+.gallery h2 {
+    margin: 8px 0;
+}
+.gallery p {
+    margin: 0;
+}
+
+.gallery .col img {
+    border-radius: 16px;
+    max-width: 25%;
+}
+
+.gallery .col {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    padding-top: 12px;
+}
+
+.CV-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-weight: 400;
+    color: grey;
+    margin: 0;
+}
+
+.diplome .nom {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: blue;
+    padding-top: 10px;
+}
+
+.diplome .lieu {
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    margin: 6px 0;
+}
+
+.diplome .date {
+    font-size: 16px;
+    font-weight: 400;
+    color: grey;
+    margin: 8px 0;
+}
+
+.about-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 180px;
+}

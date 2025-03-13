@@ -1,0 +1,22 @@
+/* Largeur de la scrollbar */
+::-webkit-scrollbar {
+    width: 8px; /* Pour les scrollbars verticales */
+    height: 8px; /* Pour les scrollbars horizontales */
+}
+
+/* Couleur et arrondi du curseur de la scrollbar */
+::-webkit-scrollbar-thumb {
+    background: blue; /* Couleur bleue */
+    border-radius: 15px; /* Bords arrondis */
+}
+
+/* Couleur de fond de la scrollbar */
+::-webkit-scrollbar-track {
+    background: rgba(211, 211, 211, 1); /* Gris clair */
+    border-radius: 5px;
+}
+
+/* Effet au survol */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(0, 0, 207);
+}
