@@ -10,6 +10,7 @@ body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     max-width: 100vw;
     overflow-x: hidden;
+    background-color: #fff;
 }
 
 .bloc p {
@@ -112,11 +113,11 @@ body {
 /*-----------------*/
 #bloc6 {
     background: linear-gradient(90deg, rgba(23, 29, 28, 1) 0%, rgba(88, 99, 248, 1) 45%, rgba(211, 211, 211, 1) 90%);
-    height: 700px;
+    height: 880px;
     left: 62.5%;
 }
 #bloc6:hover {
-    height: 780px;
+    height: 980px;
 }
 #bloc6:hover p {
     color: #fff;
@@ -125,11 +126,11 @@ body {
 /*-----------------*/
 #bloc7 {
     background: linear-gradient(90deg, rgba(23, 29, 28, 1) 0%, rgba(88, 99, 248, 1) 35%, rgba(211, 211, 211, 1) 80%);
-    height: 240px;
+    height: 340px;
     left: 75%;
 }
 #bloc7:hover {
-    height: 325px;
+    height: 425px;
 }
 #bloc7:hover p {
     color: #fff;
@@ -138,14 +139,14 @@ body {
 /*-----------------*/
 #bloc8 {
     background: linear-gradient(90deg, rgba(23, 29, 28, 1) 0%, rgba(88, 99, 248, 1) 30%, rgb(211, 211, 211) 70%);
-    height: 450px;
+    height: 575px;
     left: 87.5%;
 }
 #bloc8 p {
     color: #5863f8;
 }
 #bloc8:hover {
-    height: 600px;
+    height: 630px;
 }
 #bloc8:hover p {
     color: blue;
@@ -155,7 +156,7 @@ body {
 /*-------------------------------------------------------------------------------*/
 
 header {
-    height: 60vh;
+    height: 70vh;
 }
 
 footer {

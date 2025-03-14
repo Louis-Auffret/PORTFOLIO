@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //     });
         // }
         if (page === "test") {
-            fetch("../Pages/test.html")
+            fetch("./Pages/test.html")
                 .then((response) => response.text())
                 .then((data) => {
                     content.innerHTML = data;
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
                 .catch((error) => console.error("Error loading test.html:", error));
         } else if (page === "books") {
-            fetch("../Pages/books.html")
+            fetch("./Pages/books.html")
                 .then((response) => response.text())
                 .then((data) => {
                     content.innerHTML = data;
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
                 .catch((error) => console.error("Error loading books.html:", error));
         } else if (page === "identity") {
-            fetch("../Pages/identity.html")
+            fetch("./Pages/identity.html")
                 .then((response) => response.text())
                 .then((data) => {
                     content.innerHTML = data;
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
             //     <p>Cliquez sur "Projets" pour voir mes réalisations.</p>
             // `;
         } else if (page === "about") {
-            fetch("../Pages/about.html")
+            fetch("./Pages/about.html")
                 .then((response) => response.text())
                 .then((data) => {
                     content.innerHTML = data;
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
                 .catch((error) => console.error("Error loading about.html:", error));
         } else if (page === "web") {
-            fetch("../Pages/web.html")
+            fetch("./Pages/web.html")
                 .then((response) => response.text())
                 .then((data) => {
                     content.innerHTML = data;
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
                 .catch((error) => console.error("Error loading web.html:", error));
         } else if (page === "communication") {
-            fetch("../Pages/communication.html")
+            fetch("./Pages/communication.html")
                 .then((response) => response.text())
                 .then((data) => {
                     content.innerHTML = data;
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
                 .catch((error) => console.error("Error loading communication.html:", error));
         } else if (page === "logo") {
-            fetch("../Pages/logo.html")
+            fetch("./Pages/logo.html")
                 .then((response) => response.text())
                 .then((data) => {
                     content.innerHTML = data;
@@ -118,6 +118,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Écouteur d'événement pour le changement de hash dans l'URL
+    window.addEventListener("hashchange", () => {
+        loadPage(window.location.hash.substring(1)); // Récupère la page après #
+    });
+
+    // Charger la page initiale basée sur l'URL
+    loadPage(window.location.hash.substring(1));
+
     // Charger la page d'accueil par défaut
-    loadPage("home");
+    // loadPage("home");
 });
