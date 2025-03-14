@@ -14,11 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const content = document.getElementById("content");
     const links = document.querySelectorAll("nav a");
 
-    // Fonction pour mettre à jour les images avec data-src
-    const updateImages = () => {
+    // Fonction pour mettre à jour les images et les vidéos avec data-src
+    const updateMedia = () => {
+        // Mettre à jour les images
         document.querySelectorAll("img[data-src]").forEach((img) => {
             let imgPath = IMAGE_PATH + img.getAttribute("data-src");
             img.src = imgPath;
+        });
+
+        // Mettre à jour les vidéos
+        document.querySelectorAll("video[data-src]").forEach((video) => {
+            let videoPath = IMAGE_PATH + video.getAttribute("data-src");
+            video.src = videoPath;
         });
     };
 
@@ -31,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then((data) => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
-                    updateImages(); // Mettre à jour les images après avoir chargé la page
+                    updateMedia(); // Mettre à jour les images et vidéos
                 })
                 .catch((error) => console.error("Error loading books.html:", error));
         } else if (page === "identity") {
@@ -40,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then((data) => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
-                    updateImages(); // Mettre à jour les images après avoir chargé la page
+                    updateMedia(); // Mettre à jour les images et vidéos
                 })
                 .catch((error) => console.error("Error loading identity.html:", error));
         } else if (page === "home") {
@@ -51,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then((data) => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
-                    updateImages(); // Mettre à jour les images après avoir chargé la page
+                    updateMedia(); // Mettre à jour les images et vidéos
                 })
                 .catch((error) => console.error("Error loading about.html:", error));
         } else if (page === "web") {
@@ -60,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then((data) => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
-                    updateImages(); // Mettre à jour les images après avoir chargé la page
+                    updateMedia(); // Mettre à jour les images et vidéos
                 })
                 .catch((error) => console.error("Error loading web.html:", error));
         } else if (page === "communication") {
@@ -69,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then((data) => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
-                    updateImages(); // Mettre à jour les images après avoir chargé la page
+                    updateMedia(); // Mettre à jour les images et vidéos
                 })
                 .catch((error) => console.error("Error loading communication.html:", error));
         } else if (page === "logo") {
@@ -78,9 +85,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then((data) => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
-                    updateImages(); // Mettre à jour les images après avoir chargé la page
+                    updateMedia(); // Mettre à jour les images et vidéos
                 })
                 .catch((error) => console.error("Error loading logo.html:", error));
+        } else if (page === "motion") {
+            fetch("./Pages/motion.html")
+                .then((response) => response.text())
+                .then((data) => {
+                    content.innerHTML = data;
+                    content.scrollIntoView({ behavior: "smooth" });
+                    updateMedia(); // Mettre à jour les images et vidéos
+                })
+                .catch((error) => console.error("Error loading motion.html:", error));
         }
     }
 
