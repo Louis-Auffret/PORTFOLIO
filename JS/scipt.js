@@ -38,15 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //         });
         //     });
         // }
-        if (page === "test") {
-            fetch("./Pages/test.html")
-                .then((response) => response.text())
-                .then((data) => {
-                    content.innerHTML = data;
-                    content.scrollIntoView({ behavior: "smooth" });
-                })
-                .catch((error) => console.error("Error loading test.html:", error));
-        } else if (page === "books") {
+        if (page === "books") {
             fetch("./Pages/books.html")
                 .then((response) => response.text())
                 .then((data) => {
