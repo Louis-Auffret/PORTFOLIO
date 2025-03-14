@@ -15,35 +15,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const content = document.getElementById("content");
     const links = document.querySelectorAll("nav a");
 
+    const isGitHubPages = window.location.hostname.includes("github.io");
+    const IMAGE_PATH = isGitHubPages
+        ? "/PORTFOLIO/assets/img/" // Pour GitHub Pages
+        : "./assets/img/"; // Pour local
+
+    // Fonction pour mettre à jour les images avec data-src
+    const updateImages = () => {
+        document.querySelectorAll("img[data-src]").forEach((img) => {
+            let imgPath = IMAGE_PATH + img.getAttribute("data-src");
+            img.src = imgPath;
+            console.log("Image mise à jour :", img.src);
+        });
+    };
+
     // Fonction pour charger une page
     function loadPage(page) {
-        // if (page === "projet") {
-        //     // Affiche la liste des projets
-        //     content.innerHTML = `
-        //         <h2>Mes Projets</h2>
-        //         <ul>
-        //             <li><a href="#" data-project="projet1">Projet 1</a></li>
-        //             <li><a href="#" data-project="projet2">Projet 2</a></li>
-        //             <li><a href="#" data-project="projet3">Projet 3</a></li>
-        //         </ul>
-        //     `;
-
-        //     // Ajoute les événements pour les projets
-        //     document.querySelectorAll("ul li a").forEach((link) => {
-        //         link.addEventListener("click", (e) => {
-        //             e.preventDefault();
-        //             const project = link.getAttribute("data-project");
-        //             loadProject(project);
-        //             content.scrollIntoView({ behavior: "smooth" });
-        //         });
-        //     });
-        // }
+        // Charger les pages dynamiquement
         if (page === "books") {
             fetch("./Pages/books.html")
                 .then((response) => response.text())
                 .then((data) => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
+                    updateImages(); // Mettre à jour les images après avoir chargé la page
                 })
                 .catch((error) => console.error("Error loading books.html:", error));
         } else if (page === "identity") {
@@ -52,20 +47,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then((data) => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
+                    updateImages(); // Mettre à jour les images après avoir chargé la page
                 })
                 .catch((error) => console.error("Error loading identity.html:", error));
         } else if (page === "home") {
             // Retour à la page d'accueil
-            // content.innerHTML = `
-            //     <h2>Bienvenue sur mon Portfolio</h2>
-            //     <p>Cliquez sur "Projets" pour voir mes réalisations.</p>
-            // `;
         } else if (page === "about") {
             fetch("./Pages/about.html")
                 .then((response) => response.text())
                 .then((data) => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
+                    updateImages(); // Mettre à jour les images après avoir chargé la page
                 })
                 .catch((error) => console.error("Error loading about.html:", error));
         } else if (page === "web") {
@@ -74,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then((data) => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
+                    updateImages(); // Mettre à jour les images après avoir chargé la page
                 })
                 .catch((error) => console.error("Error loading web.html:", error));
         } else if (page === "communication") {
@@ -82,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then((data) => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
+                    updateImages(); // Mettre à jour les images après avoir chargé la page
                 })
                 .catch((error) => console.error("Error loading communication.html:", error));
         } else if (page === "logo") {
@@ -90,15 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then((data) => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
+                    updateImages(); // Mettre à jour les images après avoir chargé la page
                 })
                 .catch((error) => console.error("Error loading logo.html:", error));
         }
     }
-
-    // Fonction pour charger un projet spécifique
-    // function loadProject(project) {
-    //     content.innerHTML = `<h2>${project}</h2><p>Voici les détails du ${project}.</p>`;
-    // }
 
     // Ajout d'événements sur les liens principaux
     links.forEach((link) => {
