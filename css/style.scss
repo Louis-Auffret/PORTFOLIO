@@ -365,7 +365,7 @@ footer {
         padding: 40px 60px;
 
         @include respond(mobile) {
-            padding: 24px 0;
+            padding: 0;
         }
 
         a {
@@ -405,7 +405,7 @@ a {
 
         @include respond(mobile) {
             font-size: 70px;
-            padding-top: 80px;
+            padding-top: 90px;
             padding-bottom: 0px !important;
             word-wrap: break-word;
         }
