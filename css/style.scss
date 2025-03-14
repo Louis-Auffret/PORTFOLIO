@@ -68,6 +68,7 @@ body {
         float: right;
 
         @include respond(mobile) {
+            letter-spacing: 6px;
             font-size: 8vw;
             transform: rotate(0deg);
             // letter-spacing: -8px;
@@ -115,6 +116,10 @@ body {
 #bloc1:hover p {
     color: #fff;
     letter-spacing: 15px;
+
+    @include respond(mobile) {
+        letter-spacing: 8px;
+    }
 }
 /*-----------------*/
 #bloc2 {
@@ -141,6 +146,10 @@ body {
 #bloc2:hover p {
     color: #fff;
     letter-spacing: 15px;
+
+    @include respond(mobile) {
+        letter-spacing: 8px;
+    }
 }
 /*-----------------*/
 #bloc3 {
@@ -169,6 +178,10 @@ body {
 #bloc3:hover p {
     color: #fff;
     letter-spacing: 15px;
+
+    @include respond(mobile) {
+        letter-spacing: 8px;
+    }
 }
 /*-----------------*/
 #bloc5 {
@@ -202,6 +215,10 @@ body {
 #bloc5:hover p {
     color: #fff;
     letter-spacing: 15px;
+
+    @include respond(mobile) {
+        letter-spacing: 8px;
+    }
 }
 /*-----------------*/
 #bloc6 {
@@ -211,13 +228,13 @@ body {
 
     @include respond(mobile) {
         background: linear-gradient(0deg, rgba(23, 29, 28, 1) 0%, rgba(88, 99, 248, 1) 45%, rgba(211, 211, 211, 1) 90%);
-        width: 95%;
+        width: 90%;
         height: 12vh;
         top: 48vh;
         left: 0;
 
         &:hover {
-            width: 100%;
+            width: 95%;
         }
     }
 }
@@ -230,6 +247,10 @@ body {
 #bloc6:hover p {
     color: #fff;
     letter-spacing: 15px;
+
+    @include respond(mobile) {
+        letter-spacing: 8px;
+    }
 }
 /*-----------------*/
 #bloc7 {
@@ -258,6 +279,10 @@ body {
 #bloc7:hover p {
     color: #fff;
     letter-spacing: 15px;
+
+    @include respond(mobile) {
+        letter-spacing: 8px;
+    }
 }
 /*-----------------*/
 #bloc8 {
@@ -290,6 +315,10 @@ body {
 #bloc8:hover p {
     color: blue;
     letter-spacing: 15px;
+
+    @include respond(mobile) {
+        letter-spacing: 8px;
+    }
 }
 
 /*-------------------------------------------------------------------------------*/
@@ -309,7 +338,7 @@ footer {
 
     @include respond(mobile) {
         flex-direction: column;
-        padding-left: 24px;
+        padding: 24px;
     }
 
     #name {
@@ -378,7 +407,7 @@ a {
             font-size: 70px;
             padding-top: 80px;
             padding-bottom: 0px !important;
-            white-space: wrap;
+            word-wrap: break-word;
         }
     }
 }
