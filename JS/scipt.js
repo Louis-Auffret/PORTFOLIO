@@ -1,13 +1,12 @@
-const title = document.querySelector("#name");
-// const infos = document.querySelector("#infos");
+import { getImagePath } from "./config.js";
+const IMAGE_PATH = getImagePath();
 
+const title = document.querySelector("#name");
 window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
         title.style.color = "blue";
-        // infos.style.display = "block";
     } else {
         title.style.color = "black";
-        // infos.style.display = "none";
     }
 });
 
@@ -15,17 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const content = document.getElementById("content");
     const links = document.querySelectorAll("nav a");
 
-    const isGitHubPages = window.location.hostname.includes("github.io");
-    const IMAGE_PATH = isGitHubPages
-        ? "/PORTFOLIO/assets/img/" // Pour GitHub Pages
-        : "./assets/img/"; // Pour local
-
     // Fonction pour mettre à jour les images avec data-src
     const updateImages = () => {
         document.querySelectorAll("img[data-src]").forEach((img) => {
             let imgPath = IMAGE_PATH + img.getAttribute("data-src");
             img.src = imgPath;
-            console.log("Image mise à jour :", img.src);
         });
     };
 
