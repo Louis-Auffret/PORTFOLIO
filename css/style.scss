@@ -546,8 +546,8 @@ a {
 
     .close {
         position: absolute;
-        top: 20px;
-        right: 20px;
+
+        transform: translateY(-50%);
         font-size: 30px;
         cursor: pointer;
         color: blue;
@@ -564,6 +564,15 @@ a {
             background-color: #5863f8;
             color: white;
         }
+
+        @include respond(mobile) {
+            bottom: 20px;
+        }
+
+        @include respond(desktop) {
+            top: 45px;
+            right: 20px;
+        }
     }
 
     .prev {
@@ -577,7 +586,6 @@ a {
     .prev,
     .next {
         position: absolute;
-        top: 50%;
         transform: translateY(-50%);
         font-size: 30px;
         color: white;
@@ -596,6 +604,14 @@ a {
         &:hover {
             background-color: #5863f8;
             color: white;
+        }
+
+        @include respond(mobile) {
+            bottom: 20px;
+        }
+
+        @include respond(desktop) {
+            top: 50%;
         }
     }
 

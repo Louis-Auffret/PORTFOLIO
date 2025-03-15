@@ -545,8 +545,7 @@ a:visited {
 }
 #lightbox .close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  transform: translateY(-50%);
   font-size: 30px;
   cursor: pointer;
   color: blue;
@@ -563,6 +562,17 @@ a:visited {
   background-color: #5863f8;
   color: white;
 }
+@media (max-width: 480px) {
+  #lightbox .close {
+    bottom: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  #lightbox .close {
+    top: 45px;
+    right: 20px;
+  }
+}
 #lightbox .prev {
   left: 5vw;
 }
@@ -572,7 +582,6 @@ a:visited {
 #lightbox .prev,
 #lightbox .next {
   position: absolute;
-  top: 50%;
   transform: translateY(-50%);
   font-size: 30px;
   color: white;
@@ -594,6 +603,18 @@ a:visited {
 #lightbox .next:hover {
   background-color: #5863f8;
   color: white;
+}
+@media (max-width: 480px) {
+  #lightbox .prev,
+  #lightbox .next {
+    bottom: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  #lightbox .prev,
+  #lightbox .next {
+    top: 50%;
+  }
 }
 #lightbox.show {
   opacity: 1;
