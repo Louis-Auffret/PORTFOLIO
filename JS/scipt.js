@@ -13,13 +13,22 @@ window.addEventListener("scroll", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const content = document.getElementById("content");
     const links = document.querySelectorAll("nav a");
+    let currentImageIndex = 0;
+    let images = [];
 
     // Fonction pour mettre à jour les images et les vidéos avec data-src
     const updateMedia = () => {
-        // Mettre à jour les images
-        document.querySelectorAll("img[data-src]").forEach((img) => {
+        images = Array.from(document.querySelectorAll("img[data-src]"));
+        images.forEach((img, index) => {
             let imgPath = IMAGE_PATH + img.getAttribute("data-src");
             img.src = imgPath;
+            img.dataset.index = index;
+
+            img.addEventListener("click", () => {
+                currentImageIndex = index;
+                lightboxImg.src = img.src;
+                lightbox.classList.add("show");
+            });
         });
 
         // Mettre à jour les vidéos
@@ -120,4 +129,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Charger la page d'accueil par défaut
     // loadPage("home");
+
+    // Lightbox
+    let lightbox = document.getElementById("lightbox");
+
+    // Si la lightbox n'existe pas, on la crée
+    if (!lightbox) {
+        lightbox = document.createElement("div");
+        lightbox.id = "lightbox";
+        lightbox.innerHTML = `
+            <span class="close"><i class="fa-solid fa-xmark"></i></span>
+            <img src="" alt="Image agrandie">
+            <span class="prev"><i class="fa-solid fa-arrow-left"></i></span>
+            <span class="next"><i class="fa-solid fa-arrow-right"></i></span>
+        `;
+        document.body.appendChild(lightbox);
+    }
+
+    const lightboxImg = lightbox.querySelector("img");
+    const closeBtn = lightbox.querySelector(".close");
+    const prevBtn = lightbox.querySelector(".prev");
+    const nextBtn = lightbox.querySelector(".next");
+
+    closeBtn.addEventListener("click", () => {
+        lightbox.classList.remove("show");
+    });
+
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove("show");
+        }
+    });
+
+    prevBtn.addEventListener("click", () => {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        lightboxImg.src = images[currentImageIndex].src;
+    });
+
+    nextBtn.addEventListener("click", () => {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        lightboxImg.src = images[currentImageIndex].src;
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (lightbox.classList.contains("show")) {
+            if (e.key === "ArrowLeft") {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                lightboxImg.src = images[currentImageIndex].src;
+            } else if (e.key === "ArrowRight") {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                lightboxImg.src = images[currentImageIndex].src;
+            } else if (e.key === "Escape") {
+                lightbox.classList.remove("show");
+            }
+        }
+    });
 });

@@ -17,7 +17,7 @@ body {
   background: linear-gradient(90deg, rgb(23, 29, 28) 30%, rgb(88, 99, 248) 80%, rgb(211, 211, 211) 100%);
   width: 14.285%;
   color: #000;
-  border-radius: 0 0 120px 120px/0 0 42px 42px;
+  border-radius: 0 0 50% 50%/0 0 50px 50px;
   transition: 300ms;
   z-index: 100;
   position: absolute;
@@ -25,7 +25,7 @@ body {
 @media (max-width: 480px) {
   .bloc {
     background: linear-gradient(0deg, rgb(23, 29, 28) 30%, rgb(88, 99, 248) 80%, rgb(211, 211, 211) 100%);
-    border-radius: 0 20px 20px 0/0 42px 42px 0;
+    border-radius: 0 20px 20px 0/0 50% 50% 0;
   }
 }
 .bloc p {
@@ -447,6 +447,9 @@ a:visited {
   border-radius: 16px;
   max-width: 24.5%;
 }
+.gallery .col img:hover {
+  cursor: pointer;
+}
 @media (max-width: 480px) {
   .gallery .col img {
     max-width: 100%;
@@ -519,4 +522,80 @@ a:visited {
   font-weight: 400;
   color: grey;
   margin: 8px 0;
+}
+
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 999;
+}
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+#lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: blue;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+#lightbox .close:hover {
+  background-color: #5863f8;
+  color: white;
+}
+#lightbox .prev {
+  left: 5vw;
+}
+#lightbox .next {
+  right: 5vw;
+}
+#lightbox .prev,
+#lightbox .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: blue;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+#lightbox .prev:hover,
+#lightbox .next:hover {
+  background-color: #5863f8;
+  color: white;
+}
+#lightbox.show {
+  opacity: 1;
+  visibility: visible;
 }/*# sourceMappingURL=style.css.map */
