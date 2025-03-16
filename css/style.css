@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
 *::before::after {
   margin: 0;
   padding: 0;
@@ -332,7 +338,8 @@ body {
 
 /*-------------------------------------------------------------------------------*/
 header {
-  height: 70vh;
+  height: 80vh;
+  width: 100%;
 }
 
 footer {
@@ -348,6 +355,12 @@ footer {
   footer {
     flex-direction: column;
     padding: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  footer {
+    position: fixed;
+    bottom: -20px;
   }
 }
 footer #name {
@@ -374,6 +387,7 @@ footer #infos {
 }
 @media (max-width: 480px) {
   footer #infos {
+    align-self: flex-start;
     padding: 0;
   }
 }
@@ -396,13 +410,16 @@ a:visited {
 }
 
 #content {
+  width: 100%;
   padding: 60px;
+  margin-bottom: 20vh;
   display: flex;
   flex-direction: column;
 }
 @media (max-width: 480px) {
   #content {
     padding: 24px;
+    margin-bottom: 0;
   }
 }
 #content h2 {
@@ -543,7 +560,17 @@ a:visited {
   max-width: 90%;
   max-height: 90%;
 }
+@media (max-width: 480px) {
+  #lightbox img {
+    width: auto;
+    height: 90vw;
+    transform: rotate(90deg);
+    max-width: 90vh;
+    max-height: 90vw;
+  }
+}
 #lightbox .close {
+  z-index: 1000;
   position: absolute;
   transform: translateY(-50%);
   font-size: 30px;
@@ -564,7 +591,7 @@ a:visited {
 }
 @media (max-width: 480px) {
   #lightbox .close {
-    bottom: 20px;
+    bottom: 0px;
   }
 }
 @media (min-width: 1024px) {
@@ -581,6 +608,7 @@ a:visited {
 }
 #lightbox .prev,
 #lightbox .next {
+  z-index: 1000;
   position: absolute;
   transform: translateY(-50%);
   font-size: 30px;
@@ -607,7 +635,7 @@ a:visited {
 @media (max-width: 480px) {
   #lightbox .prev,
   #lightbox .next {
-    bottom: 20px;
+    bottom: 0px;
   }
 }
 @media (min-width: 1024px) {

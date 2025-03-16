@@ -17,6 +17,12 @@
     }
 }
 
+html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
 *::before::after {
     margin: 0;
     padding: 0;
@@ -324,7 +330,8 @@ body {
 /*-------------------------------------------------------------------------------*/
 
 header {
-    height: 70vh;
+    height: 80vh;
+    width: 100%;
 }
 
 footer {
@@ -339,6 +346,11 @@ footer {
     @include respond(mobile) {
         flex-direction: column;
         padding: 24px;
+    }
+
+    @include respond(desktop) {
+        position: fixed;
+        bottom: -20px;
     }
 
     #name {
@@ -365,6 +377,7 @@ footer {
         padding: 40px 60px;
 
         @include respond(mobile) {
+            align-self: flex-start;
             padding: 0;
         }
 
@@ -390,12 +403,15 @@ a {
 }
 
 #content {
+    width: 100%;
     padding: 60px;
+    margin-bottom: 20vh;
     display: flex;
     flex-direction: column;
 
     @include respond(mobile) {
         padding: 24px;
+        margin-bottom: 0;
     }
 
     h2 {
@@ -542,11 +558,19 @@ a {
     img {
         max-width: 90%;
         max-height: 90%;
+
+        @include respond(mobile) {
+            width: auto;
+            height: 90vw;
+            transform: rotate(90deg);
+            max-width: 90vh;
+            max-height: 90vw;
+        }
     }
 
     .close {
+        z-index: 1000;
         position: absolute;
-
         transform: translateY(-50%);
         font-size: 30px;
         cursor: pointer;
@@ -566,7 +590,7 @@ a {
         }
 
         @include respond(mobile) {
-            bottom: 20px;
+            bottom: 0px;
         }
 
         @include respond(desktop) {
@@ -585,6 +609,7 @@ a {
 
     .prev,
     .next {
+        z-index: 1000;
         position: absolute;
         transform: translateY(-50%);
         font-size: 30px;
@@ -607,7 +632,7 @@ a {
         }
 
         @include respond(mobile) {
-            bottom: 20px;
+            bottom: 0px;
         }
 
         @include respond(desktop) {
