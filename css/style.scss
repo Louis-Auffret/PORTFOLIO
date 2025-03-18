@@ -457,6 +457,7 @@ a {
         img {
             border-radius: 16px;
             max-width: 24.5%;
+            object-fit: contain;
 
             &:hover {
                 cursor: pointer;

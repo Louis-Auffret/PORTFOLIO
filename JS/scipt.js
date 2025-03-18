@@ -3,11 +3,14 @@ const IMAGE_PATH = getImagePath();
 
 const title = document.querySelector("#name");
 window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-        title.style.color = "blue";
-    } else {
-        title.style.color = "black";
-    }
+    // Calcule le pourcentage de défilement
+    const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    // Limiter le pourcentage de scroll entre 0 et 100
+    const limitedScroll = Math.min(Math.max(scrollPercentage, 0), 100);
+    // Calculer la composante bleue en fonction du pourcentage de scroll
+    const blueValue = Math.round(limitedScroll * 2.55);
+    // Appliquer la couleur de fond basée sur le pourcentage de scroll
+    title.style.color = `rgb(0, 0, ${blueValue})`;
 });
 
 document.addEventListener("DOMContentLoaded", () => {
