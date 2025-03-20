@@ -447,7 +447,7 @@ a {
     @include respond(mobile) {
         flex-direction: column;
         align-items: start;
-        padding: 12px;
+        padding: 18px 12px;
         gap: 0;
     }
 
@@ -459,19 +459,13 @@ a {
         background-color: rgb(173, 216, 255);
     }
 
-    .release-date {
-        font-weight: 600;
-        font-size: 24px;
-        margin: 0;
-    }
-
     .description-group {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         gap: 20px;
-        max-width: 95%;
+        width: 100%;
 
         @include respond(mobile) {
             flex-direction: column;
@@ -487,6 +481,18 @@ a {
 
             @include respond(mobile) {
                 white-space: normal;
+            }
+        }
+
+        .release-date {
+            font-weight: 600;
+            font-size: 24px;
+            margin: 0;
+            margin-left: auto;
+            order: 3;
+
+            @include respond(mobile) {
+                padding-top: 6px;
             }
         }
 
@@ -527,6 +533,7 @@ a {
     }
 
     .description-group {
+        display: flex;
         flex-direction: column;
         align-items: baseline;
         gap: 10px;
@@ -536,6 +543,7 @@ a {
         }
 
         .description {
+            order: 3;
             white-space: normal;
             overflow: visible;
             text-overflow: unset;
@@ -546,10 +554,16 @@ a {
                 display: block;
             }
         }
-    }
 
-    .release-date {
-        display: none;
+        .release-date {
+            order: 2;
+            margin-left: 0;
+
+            @include respond(desktop) {
+                position: absolute;
+                right: 60px;
+            }
+        }
     }
 
     .col {
@@ -597,6 +611,16 @@ a {
 
             @include respond(mobile) {
                 display: none;
+            }
+        }
+        .iframe-link {
+            display: none;
+
+            @include respond(mobile) {
+                display: block;
+                color: blue;
+                text-decoration: none;
+                text-align: center;
             }
         }
     }
