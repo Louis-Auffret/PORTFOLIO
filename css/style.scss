@@ -650,3 +650,24 @@ a {
         visibility: visible;
     }
 }
+
+#canvas-container {
+    pointer-events: none;
+    position: fixed;
+    bottom: 0px;
+    left: 1850px;
+    width: 200%;
+    transition: opacity 0.25s ease-out;
+    opacity: 0;
+
+    @include respond(mobile) {
+        width: 50%;
+        bottom: 175px;
+        left: 20px;
+
+        #myCanvas {
+            width: 90%;
+            height: 100%;
+        }
+    }
+}

@@ -648,4 +648,25 @@ a:visited {
 #lightbox.show {
   opacity: 1;
   visibility: visible;
+}
+
+#canvas-container {
+  pointer-events: none;
+  position: fixed;
+  bottom: 0px;
+  left: 1850px;
+  width: 200%;
+  transition: opacity 0.25s ease-out;
+  opacity: 0;
+}
+@media (max-width: 480px) {
+  #canvas-container {
+    width: 50%;
+    bottom: 175px;
+    left: 20px;
+  }
+  #canvas-container #myCanvas {
+    width: 90%;
+    height: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

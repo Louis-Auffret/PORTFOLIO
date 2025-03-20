@@ -30,6 +30,9 @@
 
         <!-- Pied de page fixe -->
         <footer>
+            <div id="canvas-container">
+                <canvas id="myCanvas" width="500" height="400"></canvas>
+            </div>
             <h2 id="name">Louis Auffret.</h2>
             <div id="infos">
                 <p class="info" style="text-transform: uppercase">Graphiste, Intégrateur web & UI/UX Designer</p>
@@ -51,6 +54,28 @@
             </div>
         </footer>
 
+        <script>
+            // Fonction pour charger et dessiner l'image SVG depuis un fichier externe dans le canvas
+            function drawSVGOnCanvas() {
+                const canvas = document.getElementById("myCanvas");
+                const context = canvas.getContext("2d");
+
+                // Crée une image à partir du fichier SVG
+                const img = new Image();
+                img.src = "./assets/img/Signature.svg";
+
+                img.onload = function () {
+                    context.drawImage(img, 0, 40);
+                };
+
+                img.onerror = function () {
+                    console.error("Erreur de chargement du fichier SVG.");
+                };
+            }
+
+            // Appel de la fonction pour dessiner l'image
+            drawSVGOnCanvas();
+        </script>
         <script src="./JS/config.js" defer></script>
         <script type="module" src="./JS/scipt.js"></script>
     </body>

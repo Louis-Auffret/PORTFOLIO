@@ -11,6 +11,13 @@ window.addEventListener("scroll", () => {
     const blueValue = Math.round(limitedScroll * 2.55);
     // Appliquer la couleur de fond basée sur le pourcentage de scroll
     title.style.color = `rgb(0, 0, ${blueValue})`;
+
+    const canvasContainer = document.getElementById("canvas-container");
+    if (scrollPercentage === 100) {
+        canvasContainer.style.opacity = "1"; // Cache la div
+    } else {
+        canvasContainer.style.opacity = "0"; // Affiche la div
+    }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
