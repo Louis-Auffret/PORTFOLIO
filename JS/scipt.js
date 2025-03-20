@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
                     updateMedia(); // Mettre à jour les images et vidéos
+                    resizeText();
                 })
                 .catch((error) => console.error("Error loading books.html:", error));
         } else if (page === "identity") {
@@ -60,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
                     updateMedia(); // Mettre à jour les images et vidéos
+                    resizeText();
                 })
                 .catch((error) => console.error("Error loading identity.html:", error));
         } else if (page === "home") {
@@ -71,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
                     updateMedia(); // Mettre à jour les images et vidéos
+                    resizeText();
                 })
                 .catch((error) => console.error("Error loading about.html:", error));
         } else if (page === "web") {
@@ -80,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
                     updateMedia(); // Mettre à jour les images et vidéos
+                    resizeText();
                 })
                 .catch((error) => console.error("Error loading web.html:", error));
         } else if (page === "communication") {
@@ -89,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
                     updateMedia(); // Mettre à jour les images et vidéos
+                    resizeText();
                 })
                 .catch((error) => console.error("Error loading communication.html:", error));
         } else if (page === "logo") {
@@ -98,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
                     updateMedia(); // Mettre à jour les images et vidéos
+                    resizeText();
                 })
                 .catch((error) => console.error("Error loading logo.html:", error));
         } else if (page === "motion") {
@@ -107,10 +113,33 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.innerHTML = data;
                     content.scrollIntoView({ behavior: "smooth" });
                     updateMedia(); // Mettre à jour les images et vidéos
+                    resizeText();
                 })
                 .catch((error) => console.error("Error loading motion.html:", error));
         }
     }
+
+    function resizeText() {
+        const text = document.querySelector(".fit-text");
+        if (!text) return;
+
+        let parentWidth = text.parentElement.clientWidth;
+        let fontSize = Math.min((parentWidth / text.textContent.length) * 1.5, 200); // Ajustement dynamique
+        text.style.fontSize = fontSize + "px";
+        text.style.whiteSpace = "nowrap";
+
+        // Si le texte dépasse encore, on réduit progressivement
+        while (text.offsetWidth > parentWidth && fontSize > 10) {
+            fontSize -= 1;
+            text.style.fontSize = fontSize + "px";
+        }
+    }
+
+    // Écoute le redimensionnement de la fenêtre
+    window.addEventListener("resize", resizeText);
+
+    // Écoute le redimensionnement de la fenêtre
+    window.addEventListener("resize", resizeText);
 
     // Ajout d'événements sur les liens principaux
     links.forEach((link) => {
