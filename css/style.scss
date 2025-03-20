@@ -416,15 +416,15 @@ a {
 
     h2 {
         color: blue;
-        // font-size: 200px;
         margin: 0;
+        // font-size: 200px;
         // overflow: hidden;
         // white-space: nowrap;
         // max-width: 100%;
 
         @include respond(mobile) {
             // font-size: min(10vw, 5vh, 3rem);
-            padding-top: 90px;
+            padding-top: 40px;
             padding-bottom: 0px !important;
         }
     }
@@ -432,17 +432,124 @@ a {
 
 .gallery {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    min-height: 90px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    cursor: pointer;
+    border-bottom: 1px solid blue;
+    padding: 0 60px;
+    transition: background-color 0.3s ease;
 
-    h3 {
-        margin: 8px 0;
-        color: black;
-        font-size: 24px;
-        margin-top: 40px;
+    @include respond(mobile) {
+        flex-direction: column;
+        align-items: start;
+        padding: 12px;
+        gap: 0;
     }
 
-    p {
+    &:first-of-type {
+        border-top: 1px solid blue;
+    }
+
+    &:hover {
+        background-color: rgb(173, 216, 255);
+    }
+
+    .release-date {
+        font-weight: 600;
+        font-size: 24px;
         margin: 0;
+    }
+
+    .description-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        max-width: 95%;
+
+        @include respond(mobile) {
+            flex-direction: column;
+            align-items: start;
+            gap: 0;
+        }
+
+        h3 {
+            font-size: 30px;
+            margin: 0;
+            max-width: none;
+            white-space: nowrap;
+
+            @include respond(mobile) {
+                white-space: normal;
+            }
+        }
+
+        .description {
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+
+            @include respond(mobile) {
+                white-space: normal;
+                padding-bottom: 0;
+                display: -webkit-box; /* Crée une boîte flexible */
+                -webkit-line-clamp: 3; /* Limite à 3 lignes */
+                -webkit-box-orient: vertical;
+            }
+        }
+    }
+
+    .col {
+        display: none;
+    }
+}
+
+.gallery.open {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    justify-content: left;
+    align-items: baseline;
+    max-height: none;
+    overflow: visible;
+    padding: 20px 0;
+
+    &:hover {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .description-group {
+        flex-direction: column;
+        align-items: baseline;
+        gap: 10px;
+
+        h3 {
+            font-size: 30px;
+        }
+
+        .description {
+            white-space: normal;
+            overflow: visible;
+            text-overflow: unset;
+            max-height: none;
+
+            @include respond(mobile) {
+                padding-bottom: 16px;
+                display: block;
+            }
+        }
+    }
+
+    .release-date {
+        display: none;
     }
 
     .col {
@@ -450,6 +557,7 @@ a {
         flex-direction: row;
         justify-content: space-between;
         margin-top: 12px;
+        width: 100%;
 
         @include respond(mobile) {
             margin-top: 0;
@@ -478,6 +586,17 @@ a {
             @include respond(mobile) {
                 max-width: 100%;
                 padding-bottom: 8px;
+            }
+        }
+
+        iframe {
+            border-radius: 16px;
+            max-width: 100%;
+            height: 1080px;
+            width: 100%;
+
+            @include respond(mobile) {
+                display: none;
             }
         }
     }

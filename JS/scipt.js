@@ -48,6 +48,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
+    const setupGalleryToggle = () => {
+        const galleries = document.querySelectorAll(".gallery");
+        galleries.forEach((gallery) => {
+            gallery.addEventListener("click", () => {
+                // Basculer la classe "open" pour ouvrir/fermer la galerie
+                gallery.classList.toggle("open");
+            });
+        });
+    };
+
     // Fonction pour charger une page
     function loadPage(page) {
         // Charger les pages dynamiquement
@@ -59,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.scrollIntoView({ behavior: "smooth" });
                     updateMedia(); // Mettre à jour les images et vidéos
                     resizeText();
+                    setupGalleryToggle();
                 })
                 .catch((error) => console.error("Error loading books.html:", error));
         } else if (page === "identity") {
@@ -69,6 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.scrollIntoView({ behavior: "smooth" });
                     updateMedia(); // Mettre à jour les images et vidéos
                     resizeText();
+                    setupGalleryToggle();
                 })
                 .catch((error) => console.error("Error loading identity.html:", error));
         } else if (page === "home") {
@@ -81,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.scrollIntoView({ behavior: "smooth" });
                     updateMedia(); // Mettre à jour les images et vidéos
                     resizeText();
+                    setupGalleryToggle();
                 })
                 .catch((error) => console.error("Error loading about.html:", error));
         } else if (page === "web") {
@@ -91,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.scrollIntoView({ behavior: "smooth" });
                     updateMedia(); // Mettre à jour les images et vidéos
                     resizeText();
+                    setupGalleryToggle();
                 })
                 .catch((error) => console.error("Error loading web.html:", error));
         } else if (page === "communication") {
@@ -101,6 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.scrollIntoView({ behavior: "smooth" });
                     updateMedia(); // Mettre à jour les images et vidéos
                     resizeText();
+                    setupGalleryToggle();
                 })
                 .catch((error) => console.error("Error loading communication.html:", error));
         } else if (page === "logo") {
@@ -111,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.scrollIntoView({ behavior: "smooth" });
                     updateMedia(); // Mettre à jour les images et vidéos
                     resizeText();
+                    setupGalleryToggle();
                 })
                 .catch((error) => console.error("Error loading logo.html:", error));
         } else if (page === "motion") {
@@ -121,6 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.scrollIntoView({ behavior: "smooth" });
                     updateMedia(); // Mettre à jour les images et vidéos
                     resizeText();
+                    setupGalleryToggle();
                 })
                 .catch((error) => console.error("Error loading motion.html:", error));
         }
