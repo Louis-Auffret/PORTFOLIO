@@ -52,8 +52,23 @@ document.addEventListener("DOMContentLoaded", () => {
         const galleries = document.querySelectorAll(".gallery");
         galleries.forEach((gallery) => {
             gallery.addEventListener("click", () => {
-                // Basculer la classe "open" pour ouvrir/fermer la galerie
                 gallery.classList.toggle("open");
+            });
+
+            // Empêcher la propagation des clics sur les images
+            const images = gallery.querySelectorAll("img");
+            images.forEach((img) => {
+                img.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                });
+            });
+
+            // Empêcher la propagation des clics sur les vidéos
+            const videos = gallery.querySelectorAll("video");
+            videos.forEach((video) => {
+                video.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                });
             });
         });
     };

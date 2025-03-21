@@ -436,7 +436,7 @@ a {
     min-height: 90px;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10px;
     overflow: hidden;
     transition: max-height 0.3s ease;
     cursor: pointer;
@@ -464,7 +464,7 @@ a {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
+        gap: 30px;
         width: 100%;
 
         @include respond(mobile) {
@@ -582,9 +582,15 @@ a {
             border-radius: 16px;
             max-width: 24.5%;
             object-fit: contain;
+            transition: all 0.15s ease-in-out;
 
             &:hover {
                 cursor: pointer;
+
+                @include respond(desktop) {
+                    box-shadow: 0px 4px 8px rgba($color: #000000, $alpha: 0.5);
+                    transform: translateY(-3px);
+                }
             }
 
             @include respond(mobile) {

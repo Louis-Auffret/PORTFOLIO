@@ -440,7 +440,7 @@ a:visited {
   min-height: 90px;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 10px;
   overflow: hidden;
   transition: max-height 0.3s ease;
   cursor: pointer;
@@ -467,7 +467,7 @@ a:visited {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   width: 100%;
 }
 @media (max-width: 480px) {
@@ -583,9 +583,16 @@ a:visited {
   max-width: 24.5%;
   -o-object-fit: contain;
      object-fit: contain;
+  transition: all 0.15s ease-in-out;
 }
 .gallery.open .col img:hover {
   cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .gallery.open .col img:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    transform: translateY(-3px);
+  }
 }
 @media (max-width: 480px) {
   .gallery.open .col img {

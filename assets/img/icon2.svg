@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 454.3 454.3">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .03em;
+      }
+
+      .cls-2 {
+        fill: blue;
+        font-family: 'SegoeUIVariable_550.000wght_5.000opsz', 'Segoe UI Variable';
+        font-size: 270.57px;
+        font-variation-settings: 'wght' 550, 'opsz' 5;
+      }
+
+      .cls-3 {
+        fill: url(#radial-gradient);
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="200.15" cy="42.82" fx="200.15" fy="42.82" r="444.52" gradientTransform="translate(164.75 -157.82) rotate(69.23) scale(1 .89)" gradientUnits="userSpaceOnUse">
+      <stop offset=".29" stop-color="#fff"/>
+      <stop offset=".78" stop-color="#e6e6e6"/>
+      <stop offset="1" stop-color="#b3b3b3"/>
+    </radialGradient>
+  </defs>
+  <path class="cls-3" d="M446.44,73.53c-.76-5.39-2.07-10.68-3.89-15.77-3.66-10.31-9.37-19.8-16.71-27.61-.04-.04-.07-.07-.11-.11-8.34-8.32-18.78-14.71-30.18-18.59-4.79-1.64-9.74-2.83-14.78-3.54C348.75,3.39,299.98.05,227.15.05v-.05c-72.83,0-121.6,3.34-153.62,7.86-5.39.76-10.68,2.07-15.77,3.89-10.31,3.66-19.8,9.37-27.61,16.71-.04.04-.07.07-.11.11-8.32,8.34-14.71,18.78-18.59,30.18-1.64,4.79-2.83,9.74-3.54,14.78C3.39,105.55.05,154.32.05,227.15h-.05c0,72.83,3.34,121.6,7.86,153.62.76,5.39,2.07,10.68,3.89,15.77,3.66,10.31,9.37,19.8,16.71,27.61.04.04.07.07.11.11,8.34,8.32,18.78,14.71,30.18,18.59,4.79,1.64,9.74,2.83,14.78,3.54,32.02,4.52,80.79,7.86,153.62,7.86v.05c72.83,0,121.6-3.34,153.62-7.86,5.39-.76,10.68-2.07,15.77-3.89,10.31-3.66,19.8-9.37,27.61-16.71.04-.04.07-.07.11-.11,8.32-8.34,14.71-18.78,18.59-30.18,1.64-4.79,2.83-9.74,3.54-14.78,4.52-32.02,7.86-80.79,7.86-153.62h.05c0-72.83-3.34-121.6-7.86-153.62Z"/>
+  <text class="cls-2" transform="translate(68.05 321.85)"><tspan class="cls-1" x="0" y="0">L</tspan><tspan class="cls-4" x="145.99" y="0">A</tspan></text>
+</svg>
