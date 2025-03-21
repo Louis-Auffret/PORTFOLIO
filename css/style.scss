@@ -82,7 +82,7 @@ body {
         }
 
         @include respond(mobile) {
-            background: url("/assets/img/grunge.png"),
+            background: url("./grunge.png"),
                 linear-gradient(0deg, rgb(0, 0, 0) 10%, rgb(41, 55, 255) 80%, rgb(125, 145, 255) 100%);
             border-radius: 0 20px 20px 0 / 0 50% 50% 0;
             transform-origin: left;
