@@ -187,6 +187,7 @@ footer {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 20%);
     bottom: 0;
     padding-left: 60px;
+    padding-top: 20px;
     display: flex;
     flex-direction: row;
 
@@ -379,9 +380,15 @@ a {
     max-height: none;
     overflow: visible;
     padding: 20px 0;
+    // background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, white 5%, white 95%, rgb(255, 255, 255) 100%);
+    background: linear-gradient(to bottom, rgb(173, 216, 255) 0%, white 5%);
+    transition: background-position 0.5s ease-in;
+    background-size: 100% 120%;
+    background-position: bottom;
 
     &:hover {
-        background-color: rgb(255, 255, 255);
+        transition: background-position 0.15s ease-out;
+        background-position: top;
     }
 
     .description-group {
@@ -435,6 +442,7 @@ a {
             max-width: 24.5%;
             object-fit: contain;
             transition: all 0.15s ease-in-out;
+            height: fit-content;
 
             &:hover {
                 cursor: pointer;
@@ -451,13 +459,29 @@ a {
             }
         }
 
+        .video {
+            width: 49.5%;
+            max-width: 49.5%;
+
+            &:hover {
+                cursor: default;
+                box-shadow: none;
+                transform: none;
+                pointer-events: none;
+            }
+
+            @include respond(mobile) {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
         video {
             border-radius: 16px;
             max-width: 49.5%;
 
             @include respond(mobile) {
                 max-width: 100%;
-                padding-bottom: 8px;
             }
         }
 
