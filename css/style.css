@@ -23,6 +23,7 @@ body {
 #bloc-nav {
   display: flex;
   flex-direction: row;
+  height: 100%;
 }
 @media (max-width: 480px) {
   #bloc-nav {
@@ -31,7 +32,7 @@ body {
   }
 }
 #bloc-nav .bloc {
-  background: url("/assets/img/grunge.png"), linear-gradient(90deg, rgb(0, 0, 0) 10%, rgb(41, 55, 255) 80%, rgb(125, 145, 255) 100%);
+  background: url("./grunge.png"), linear-gradient(90deg, rgb(0, 0, 0) 10%, rgb(41, 55, 255) 80%, rgb(125, 145, 255) 100%);
   filter: contrast(100%) brightness(100%) sepia(10%);
   background-blend-mode: overlay;
   background-size: cover;
@@ -43,25 +44,25 @@ body {
   flex: 1;
 }
 #bloc-nav .bloc#bloc1 {
-  height: 450px;
+  height: 45%;
 }
 #bloc-nav .bloc#bloc2 {
-  height: 675px;
+  height: 70%;
 }
 #bloc-nav .bloc#bloc3 {
-  height: 550px;
+  height: 55%;
 }
 #bloc-nav .bloc#bloc4 {
-  height: 750px;
+  height: 80%;
 }
 #bloc-nav .bloc#bloc5 {
-  height: 1000px;
+  height: 100%;
 }
 #bloc-nav .bloc#bloc6 {
-  height: 400px;
+  height: 35%;
 }
 #bloc-nav .bloc#bloc7 {
-  height: 800px;
+  height: 70%;
 }
 @media (max-width: 480px) {
   #bloc-nav .bloc {

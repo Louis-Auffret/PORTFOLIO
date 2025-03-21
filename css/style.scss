@@ -39,7 +39,7 @@ body {
 #bloc-nav {
     display: flex;
     flex-direction: row;
-    // justify-content: space-between;
+    height: 100%;
 
     @include respond(mobile) {
         flex-direction: column;
@@ -47,7 +47,7 @@ body {
     }
 
     .bloc {
-        background: url("/assets/img/grunge.png"),
+        background: url("./grunge.png"),
             linear-gradient(90deg, rgb(0, 0, 0) 10%, rgb(41, 55, 255) 80%, rgb(125, 145, 255) 100%);
         filter: contrast(100%) brightness(100%) sepia(10%);
         background-blend-mode: overlay;
@@ -60,25 +60,25 @@ body {
         flex: 1;
 
         &#bloc1 {
-            height: 450px;
+            height: 45%;
         }
         &#bloc2 {
-            height: 675px;
+            height: 70%;
         }
         &#bloc3 {
-            height: 550px;
+            height: 55%;
         }
         &#bloc4 {
-            height: 750px;
+            height: 80%;
         }
         &#bloc5 {
-            height: 1000px;
+            height: 100%;
         }
         &#bloc6 {
-            height: 400px;
+            height: 35%;
         }
         &#bloc7 {
-            height: 800px;
+            height: 70%;
         }
 
         @include respond(mobile) {
