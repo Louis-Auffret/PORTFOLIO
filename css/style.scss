@@ -47,7 +47,7 @@ body {
     }
 
     .bloc {
-        background: url("/assets/img/grunge2.png"),
+        background: url("/assets/img/grunge.png"),
             linear-gradient(90deg, rgb(0, 0, 0) 10%, rgb(41, 55, 255) 80%, rgb(125, 145, 255) 100%);
         filter: contrast(100%) brightness(100%) sepia(10%);
         background-blend-mode: overlay;
@@ -82,7 +82,7 @@ body {
         }
 
         @include respond(mobile) {
-            background: url("/assets/img/grunge2.png"),
+            background: url("/assets/img/grunge.png"),
                 linear-gradient(0deg, rgb(0, 0, 0) 10%, rgb(41, 55, 255) 80%, rgb(125, 145, 255) 100%);
             border-radius: 0 20px 20px 0 / 0 50% 50% 0;
             transform-origin: left;
@@ -191,6 +191,7 @@ footer {
     flex-direction: row;
 
     @include respond(mobile) {
+        width: auto;
         flex-direction: column;
         padding: 24px;
     }
@@ -256,7 +257,7 @@ a {
     flex-direction: column;
 
     @include respond(mobile) {
-        width: 100%;
+        // width: 100%;
         padding: 24px;
         margin-bottom: 0;
     }
