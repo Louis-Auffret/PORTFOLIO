@@ -36,59 +36,135 @@ body {
     overflow-x: hidden;
     background-color: #fff;
 }
-
-.bloc {
-    background: linear-gradient(90deg, rgba(23, 29, 28, 1) 30%, rgba(88, 99, 248, 1) 80%, rgba(211, 211, 211, 1) 100%);
-    width: 14.285%;
-    color: #000;
-    border-radius: 0 0 50% 50% / 0 0 50px 50px;
-    transition: 300ms;
-    z-index: 100;
-    position: absolute;
+#bloc-nav {
+    display: flex;
+    flex-direction: row;
+    // justify-content: space-between;
 
     @include respond(mobile) {
-        // width: 100%;
-        background: linear-gradient(
-            0deg,
-            rgba(23, 29, 28, 1) 30%,
-            rgba(88, 99, 248, 1) 80%,
-            rgba(211, 211, 211, 1) 100%
-        );
-        border-radius: 0 20px 20px 0 / 0 50% 50% 0;
+        flex-direction: column;
+        height: 100%;
     }
 
-    p {
-        writing-mode: vertical-rl;
-        text-orientation: sideways-right;
+    .bloc {
+        background: url("/assets/img/grunge2.png"),
+            linear-gradient(90deg, rgb(0, 0, 0) 10%, rgb(41, 55, 255) 80%, rgb(125, 145, 255) 100%);
+        filter: contrast(100%) brightness(100%) sepia(10%);
+        background-blend-mode: overlay;
+        background-size: cover;
+        transform-origin: top;
         color: #000;
-        font-family: "Anton", sans-serif;
-        letter-spacing: 10px;
-        font-weight: bold;
-        font-size: 3.85vw;
-        text-transform: uppercase;
-        transform: rotate(180deg);
-        z-index: 100;
-        display: flex;
-        margin: 20px 0 0 20px;
+        border-radius: 0 0 50% 50% / 0 0 50px 50px;
         transition: 300ms;
-        float: right;
+        z-index: 100;
+        flex: 1;
+
+        &#bloc1 {
+            height: 450px;
+        }
+        &#bloc2 {
+            height: 675px;
+        }
+        &#bloc3 {
+            height: 550px;
+        }
+        &#bloc4 {
+            height: 750px;
+        }
+        &#bloc5 {
+            height: 1000px;
+        }
+        &#bloc6 {
+            height: 400px;
+        }
+        &#bloc7 {
+            height: 800px;
+        }
 
         @include respond(mobile) {
-            letter-spacing: 6px;
-            font-size: 8vw;
-            transform: rotate(0deg);
-            // letter-spacing: -8px;
-            // writing-mode: vertical-lr;
-            // text-orientation: upright;
-            // font-size: 30px;
-            // text-align: center;
-            // white-space: wrap;
-            writing-mode: horizontal-tb;
-            text-orientation: sideways;
-            float: left;
+            background: url("/assets/img/grunge2.png"),
+                linear-gradient(0deg, rgb(0, 0, 0) 10%, rgb(41, 55, 255) 80%, rgb(125, 145, 255) 100%);
+            border-radius: 0 20px 20px 0 / 0 50% 50% 0;
+            transform-origin: left;
+
+            &#bloc1,
+            #bloc2,
+            #bloc3,
+            #bloc4,
+            #bloc5,
+            #bloc6,
+            #bloc7 {
+                flex: 1;
+            }
+            &#bloc1 {
+                width: 40%;
+            }
+            &#bloc2 {
+                width: 60%;
+            }
+            &#bloc3 {
+                width: 50%;
+            }
+            &#bloc4 {
+                width: 70%;
+            }
+            &#bloc5 {
+                width: 85%;
+            }
+            &#bloc6 {
+                width: 40%;
+            }
+            &#bloc7 {
+                width: 65%;
+            }
+        }
+
+        &:hover {
+            transform: scaleY(1.1);
+
+            @include respond(mobile) {
+                transform: scaleY(1) scaleX(1.1);
+                height: 12vh;
+            }
+
+            p {
+                color: #fff;
+                letter-spacing: 15px;
+
+                @include respond(mobile) {
+                    letter-spacing: 8px;
+                }
+            }
+        }
+
+        p {
+            writing-mode: vertical-rl;
+            text-orientation: sideways-right;
+            color: #000;
+            font-family: "Anton", sans-serif;
+            letter-spacing: 10px;
+            font-weight: bold;
+            font-size: 3.85vw;
+            text-transform: uppercase;
+            transform: rotate(180deg);
+            z-index: 100;
+            display: flex;
+            margin: 20px 0 0 20px;
+            transition: 300ms;
+            float: right;
+
+            @include respond(mobile) {
+                letter-spacing: 6px;
+                font-size: 8vw;
+                transform: rotate(0deg);
+                writing-mode: horizontal-tb;
+                text-orientation: sideways;
+                float: left;
+            }
         }
     }
 }
+
 .steps {
     display: flex;
     justify-content: center;
@@ -99,235 +175,6 @@ body {
 }
 
 /*------------------------------------ BLOCS -----------------------------------*/
-#bloc1 {
-    height: 525px;
-    left: 0%;
-
-    @include respond(mobile) {
-        width: 50%;
-        height: 12vh;
-        left: 0;
-
-        &:hover {
-            width: 55%;
-        }
-    }
-}
-#bloc1:hover {
-    height: 700px;
-    @include respond(mobile) {
-        height: 12vh;
-    }
-}
-#bloc1:hover p {
-    color: #fff;
-    letter-spacing: 15px;
-
-    @include respond(mobile) {
-        letter-spacing: 8px;
-    }
-}
-/*-----------------*/
-#bloc2 {
-    height: 425px;
-    left: 14.285%;
-
-    @include respond(mobile) {
-        width: 65%;
-        height: 12vh;
-        top: 12vh;
-        left: 0;
-
-        &:hover {
-            width: 70%;
-        }
-    }
-}
-#bloc2:hover {
-    height: 555px;
-    @include respond(mobile) {
-        height: 12vh;
-    }
-}
-#bloc2:hover p {
-    color: #fff;
-    letter-spacing: 15px;
-
-    @include respond(mobile) {
-        letter-spacing: 8px;
-    }
-}
-/*-----------------*/
-#bloc3 {
-    background: linear-gradient(90deg, rgba(23, 29, 28, 1) 20%, rgba(88, 99, 248, 1) 60%, rgb(211, 211, 211) 100%);
-    height: 470px;
-    left: 28.57%;
-
-    @include respond(mobile) {
-        background: linear-gradient(0deg, rgba(23, 29, 28, 1) 20%, rgba(88, 99, 248, 1) 60%, rgb(211, 211, 211) 100%);
-        width: 55%;
-        height: 12vh;
-        top: 24vh;
-        left: 0;
-
-        &:hover {
-            width: 62%;
-        }
-    }
-}
-#bloc3:hover {
-    height: 585px;
-    @include respond(mobile) {
-        height: 12vh;
-    }
-}
-#bloc3:hover p {
-    color: #fff;
-    letter-spacing: 15px;
-
-    @include respond(mobile) {
-        letter-spacing: 8px;
-    }
-}
-/*-----------------*/
-#bloc5 {
-    background: linear-gradient(90deg, rgba(23, 29, 28, 1) 5%, rgba(88, 99, 248, 1) 55%, rgba(211, 211, 211, 1) 100%);
-    height: 650px;
-    left: 42.855%;
-
-    @include respond(mobile) {
-        background: linear-gradient(
-            0deg,
-            rgba(23, 29, 28, 1) 5%,
-            rgba(88, 99, 248, 1) 55%,
-            rgba(211, 211, 211, 1) 100%
-        );
-        width: 80%;
-        height: 12vh;
-        top: 36vh;
-        left: 0;
-
-        &:hover {
-            width: 87%;
-        }
-    }
-}
-#bloc5:hover {
-    height: 800px;
-    @include respond(mobile) {
-        height: 12vh;
-    }
-}
-#bloc5:hover p {
-    color: #fff;
-    letter-spacing: 15px;
-
-    @include respond(mobile) {
-        letter-spacing: 8px;
-    }
-}
-/*-----------------*/
-#bloc6 {
-    background: linear-gradient(90deg, rgba(23, 29, 28, 1) 0%, rgba(88, 99, 248, 1) 45%, rgba(211, 211, 211, 1) 90%);
-    height: 880px;
-    left: 57.14%;
-
-    @include respond(mobile) {
-        background: linear-gradient(0deg, rgba(23, 29, 28, 1) 0%, rgba(88, 99, 248, 1) 45%, rgba(211, 211, 211, 1) 90%);
-        width: 90%;
-        height: 12vh;
-        top: 48vh;
-        left: 0;
-
-        &:hover {
-            width: 95%;
-        }
-    }
-}
-#bloc6:hover {
-    height: 980px;
-    @include respond(mobile) {
-        height: 12vh;
-    }
-}
-#bloc6:hover p {
-    color: #fff;
-    letter-spacing: 15px;
-
-    @include respond(mobile) {
-        letter-spacing: 8px;
-    }
-}
-/*-----------------*/
-#bloc7 {
-    background: linear-gradient(90deg, rgba(23, 29, 28, 1) 0%, rgba(88, 99, 248, 1) 35%, rgba(211, 211, 211, 1) 80%);
-    height: 340px;
-    left: 71.425%;
-
-    @include respond(mobile) {
-        background: linear-gradient(0deg, rgba(23, 29, 28, 1) 0%, rgba(88, 99, 248, 1) 35%, rgba(211, 211, 211, 1) 80%);
-        width: 40%;
-        height: 12vh;
-        top: 60vh;
-        left: 0;
-        &:hover {
-            width: 50%;
-        }
-    }
-}
-#bloc7:hover {
-    height: 425px;
-
-    @include respond(mobile) {
-        height: 12vh;
-    }
-}
-#bloc7:hover p {
-    color: #fff;
-    letter-spacing: 15px;
-
-    @include respond(mobile) {
-        letter-spacing: 8px;
-    }
-}
-/*-----------------*/
-#bloc8 {
-    background: linear-gradient(90deg, rgba(23, 29, 28, 1) 0%, rgba(88, 99, 248, 1) 30%, rgb(211, 211, 211) 70%);
-    height: 575px;
-    left: 85.71%;
-
-    @include respond(mobile) {
-        background: linear-gradient(0deg, rgba(23, 29, 28, 1) 0%, rgba(88, 99, 248, 1) 30%, rgb(211, 211, 211) 70%);
-        width: 70%;
-        height: 12vh;
-        top: 72vh;
-        left: 0;
-
-        &:hover {
-            width: 75%;
-        }
-    }
-}
-#bloc8 p {
-    color: #5863f8;
-}
-#bloc8:hover {
-    height: 630px;
-
-    @include respond(mobile) {
-        height: 12vh;
-    }
-}
-#bloc8:hover p {
-    color: blue;
-    letter-spacing: 15px;
-
-    @include respond(mobile) {
-        letter-spacing: 8px;
-    }
-}
-
-/*-------------------------------------------------------------------------------*/
 
 header {
     height: 80vh;
@@ -337,7 +184,7 @@ header {
 footer {
     width: 100%;
     z-index: 99;
-    background-color: white;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 20%);
     bottom: -20px;
     padding-left: 60px;
     display: flex;
@@ -361,7 +208,7 @@ footer {
 
         @include respond(mobile) {
             font-size: 90px;
-            padding-top: 80px;
+            // padding-top: 80px;
             padding-bottom: 0px !important;
         }
     }
@@ -588,8 +435,8 @@ a {
                 cursor: pointer;
 
                 @include respond(desktop) {
+                    transform: translateY(-5px) scale(1.0075);
                     box-shadow: 0px 4px 8px rgba($color: #000000, $alpha: 0.5);
-                    transform: translateY(-3px);
                 }
             }
 

@@ -3,21 +3,12 @@ const IMAGE_PATH = getImagePath();
 
 const title = document.querySelector("#name");
 window.addEventListener("scroll", () => {
-    // Calcule le pourcentage de défilement
     const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    // Limiter le pourcentage de scroll entre 0 et 100
     const limitedScroll = Math.min(Math.max(scrollPercentage, 0), 100);
-    // Calculer la composante bleue en fonction du pourcentage de scroll
     const blueValue = Math.round(limitedScroll * 2.55);
-    // Appliquer la couleur de fond basée sur le pourcentage de scroll
     title.style.color = `rgb(0, 0, ${blueValue})`;
-
     const canvasContainer = document.getElementById("canvas-container");
-    if (scrollPercentage === 100) {
-        canvasContainer.style.opacity = "1"; // Cache la div
-    } else {
-        canvasContainer.style.opacity = "0"; // Affiche la div
-    }
+    canvasContainer.style.opacity = scrollPercentage === 100 ? "1" : "0";
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -25,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll("nav a");
     let currentImageIndex = 0;
     let images = [];
+    let lightboxImages = [];
 
     // Fonction pour mettre à jour les images et les vidéos avec data-src
     const updateMedia = () => {
@@ -34,8 +26,19 @@ document.addEventListener("DOMContentLoaded", () => {
             img.src = imgPath;
             img.dataset.index = index;
 
-            img.addEventListener("click", () => {
-                currentImageIndex = index;
+            img.addEventListener("click", (e) => {
+                // Récupérer la galerie parente
+                const gallery = img.closest(".gallery");
+                if (!gallery) return;
+
+                // Récupérer toutes les images de cette galerie
+                const galleryImages = Array.from(gallery.querySelectorAll("img"));
+
+                // Mettre à jour les images de la lightbox
+                currentImageIndex = galleryImages.indexOf(img);
+                lightboxImages = galleryImages; // Stocker les images de la galerie dans une variable globale
+
+                // Afficher l'image dans la lightbox
                 lightboxImg.src = img.src;
                 lightbox.classList.add("show");
             });
@@ -233,23 +236,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     prevBtn.addEventListener("click", () => {
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        lightboxImg.src = images[currentImageIndex].src;
+        currentImageIndex = (currentImageIndex - 1 + lightboxImages.length) % lightboxImages.length;
+        lightboxImg.src = lightboxImages[currentImageIndex].src;
     });
 
     nextBtn.addEventListener("click", () => {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        lightboxImg.src = images[currentImageIndex].src;
+        currentImageIndex = (currentImageIndex + 1) % lightboxImages.length;
+        lightboxImg.src = lightboxImages[currentImageIndex].src;
     });
 
     document.addEventListener("keydown", (e) => {
         if (lightbox.classList.contains("show")) {
             if (e.key === "ArrowLeft") {
-                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-                lightboxImg.src = images[currentImageIndex].src;
+                currentImageIndex = (currentImageIndex - 1 + lightboxImages.length) % lightboxImages.length;
+                lightboxImg.src = lightboxImages[currentImageIndex].src;
             } else if (e.key === "ArrowRight") {
-                currentImageIndex = (currentImageIndex + 1) % images.length;
-                lightboxImg.src = images[currentImageIndex].src;
+                currentImageIndex = (currentImageIndex + 1) % lightboxImages.length;
+                lightboxImg.src = lightboxImages[currentImageIndex].src;
             } else if (e.key === "Escape") {
                 lightbox.classList.remove("show");
             }
